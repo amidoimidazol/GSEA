@@ -33,7 +33,7 @@ Install
 You need to compile and build in order to run. I have tested it with g++.
 You might have to change the -L and -I (Library and Include directories )to the path of your gsl installation.
 
-    g++ -o GSEA main.cpp Application_Controller.cpp Thread_Controller.cpp Random_Sample.cpp GSEA.cpp FDR.cpp -pthread -std=c++11 -L/home/dell/gsl/lib -I/home/dell/gsl/include -lgsl -lgslcblas -lm -I./header -Wl,--no-as-needed
+    g++ -o GSEA main.cpp Application_Controller.cpp Thread_Controller.cpp Random_Sample.cpp GSEA.cpp FDR.cpp -pthread -std=c++11 -L/home/dell/gsl/lib -I/home/dell/gsl/include -lgsl -lgslcblas -lm -Wl,--no-as-needed
 
 
 ##Database:
