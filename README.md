@@ -44,22 +44,5 @@ The sample genes must be a subset of the pool genes.
 All the databases must follow the same naming convention.
 
 ##Use:
-If you input a background gene set (pool) and a sample gene set along with a GO gene database the program calculates the probability of enrichment in each go category in the database. 
-
-##Commands:
-Running the test with the predefined values:
-
-    hypergeometric
-    
-List of commands:
-
-    hypergeometric -h
-
-Manual input of database and genes:
-
-    hypergeometric -m
-
-Define costume database sample and pool:
-
-    hypergeometric -f -d database.txt -s sample.txt -p pool.txt
+If you input a background gene set (pool) and a sample gene set along with a GO gene database the program calculates the probability of enrichment in each go category in the database.
 
