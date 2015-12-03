@@ -7,7 +7,6 @@ Hypergeometric GSEA is a simple command line program written in C++ which calcul
 ##Dependencies
 GSL - Gnu Scientific Library
 
-TCLAP - Command line parser
 
 ##Installing GSL:
 ###Linux:
