@@ -54,6 +54,7 @@ If you input a background gene set (pool) and a sample gene set along with a GO 
 As of right now the databases can only be changed from the source.
 
 After you compiled the program simply use:
+
 	./GSEA
 
 ##Database formats:
