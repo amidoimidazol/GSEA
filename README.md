@@ -49,13 +49,17 @@ You might have to change the -L and -I (Library and Include directories )to the 
 
     g++ -o GSEA main.cpp Application_Controller.cpp Thread_Controller.cpp Random_Sample.cpp GSEA.cpp FDR.cpp -pthread -std=c++11 -L/home/dell/gsl/lib -I/home/dell/gsl/include -lgsl -lgslcblas -lm -Wl,--no-as-needed
 
+##Using GSEA:
+If you input a background gene set (pool) and a sample gene set along with a GO gene database the program calculates the probability of enrichment in each go category in the database.
+As of right now the databases can only be changed from the source.
 
-##Database:
+After you compiled the program simply use:
+	./GSEA
+
+##Database formats:
 All the database files should be .txt following the GO (gene ontology) format.
 For correct use the sample and population files should contain one element per line.
 The sample genes must be a subset of the pool genes.
 All the databases must follow the same naming convention.
 
-##Use:
-If you input a background gene set (pool) and a sample gene set along with a GO gene database the program calculates the probability of enrichment in each go category in the database.
 
