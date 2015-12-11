@@ -31,6 +31,20 @@ Install
 ##Installing GSEA:
 ###Linux:
 You need to compile and build in order to run. I have tested it with g++.
+You have to options to compile the program.
+
+####Makefile
+Create object file and runnable binary
+
+	make
+
+* You might have to open up the makefile with a text editor and change the line 17 and 22 to reflect the path of your GSL installation.
+
+To clear the folder and remove object files you can use:
+
+	make clean
+
+####Using g++
 You might have to change the -L and -I (Library and Include directories )to the path of your gsl installation.
 
     g++ -o GSEA main.cpp Application_Controller.cpp Thread_Controller.cpp Random_Sample.cpp GSEA.cpp FDR.cpp -pthread -std=c++11 -L/home/dell/gsl/lib -I/home/dell/gsl/include -lgsl -lgslcblas -lm -Wl,--no-as-needed
