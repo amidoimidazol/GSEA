@@ -12,21 +12,24 @@ GSL - Gnu Scientific Library
 ###Linux:
 Download GSL: http://ftp.gnu.org/gnu/gsl/
 
-Unpack the file
+Create a directory where the library will be installed to.
+Unpack the file into a different directory. 
 
     tar -zxvf gsl-2.0.tar.gz 
     
-Navigate to the folder you unpacked to, you can give any path you like
+Navigate to the folder you unpacked to, the prefix must be the path to the final installation directory.
 
     ./configure --prefix=/home/dell/gsl
 
-Navigate to the folder you selected and build
+Run make
 
     make
 
 Install
 
     sudo make install
+
+The include files will be in the directory set in the prefix.
 
 ##Installing GSEA:
 ###Linux:
