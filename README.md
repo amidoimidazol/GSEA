@@ -27,9 +27,10 @@ Run make
 
 Install
 
-    sudo make install
+    make install
 
 The include files will be in the directory set in the prefix.
+The install can fail if the install directory contains spaces in their path!
 
 ##Installing GSEA:
 ###Linux:
