@@ -59,7 +59,7 @@ As of right now the databases can only be changed from the source.
 
 After you compiled the program simply use:
 
-    ./GSEA ./Database/small_db.txt ./Database/small_pool.txt ./Database/small_sample.txt
+    ./GSEA ./Database/medium_db.txt ./Database/medium_pool.txt ./Database/medium_sample.txt
 
 You can view the results of the FDR test:
 
