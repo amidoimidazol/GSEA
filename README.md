@@ -59,12 +59,17 @@ As of right now the databases can only be changed from the source.
 
 After you compiled the program simply use:
 
-	./GSEA
+    ./GSEA ./Database/small_db.txt ./Database/small_pool.txt ./Database/small_sample.txt
+
+You can view the results of the FDR test:
+
+    cat ./Log/result.txt  
 
 ##Database formats:
 All the database files should be .txt following the GO (gene ontology) format.
 For correct use the sample and population files should contain one element per line.
 The sample genes must be a subset of the pool genes.
 All the databases must follow the same naming convention.
+All the datanase files must use the same line endings either UNIX or Windows.
 
 
