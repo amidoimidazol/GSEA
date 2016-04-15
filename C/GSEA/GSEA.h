@@ -35,14 +35,14 @@ public:
 
 	//----Methods----//
 	//----Constructors: Constructor controls the flow of the object, calls the make methods----//
-	GSEA(const char* database_file, const char* population_file, const char* sample_file);
+	GSEA(char* database_file, char* population_file, char* sample_file);
 
 private:
 	//----Data members----//
 	// Input file variables gets set by the default constructor
-	const char* database_file;
-	const char* population_file;
-	const char* sample_file;
+	char* database_file;
+	char* population_file;
+	char* sample_file;
 
 	// Container and size variables
 	std::unordered_set<std::string> population;

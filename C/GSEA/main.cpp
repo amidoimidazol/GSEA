@@ -27,13 +27,13 @@ std::map<std::string, std::pair<double, std::vector<double>>> result;
 std::mutex m;
 
 
-int main(int argc, char* argv[])
+int main(int argc, char** argv)
 {	
 	try
 	{	
-		Application_Controller my_application;
-		my_application.new_test();
-		display_result();
+                        
+            Application_Controller my_application(argv, argc);
+            display_result();
 	}
 	catch (GSEA_EXCEPTION& ex) {
 		/*
@@ -47,7 +47,6 @@ int main(int argc, char* argv[])
 		cout << ex.what() << ex.get_info() << " !" << endl;
 		cout << "Function " << ex.get_func() << "()"<< endl;
 		cout << "Location: " << ex.get_file() << " on line " << ex.get_line() << "." << endl;
-		system("pause");
 		return EXIT_FAILURE;
 	}
 	catch (exception& e)
@@ -56,11 +55,10 @@ int main(int argc, char* argv[])
 			Catch all standard exceptions
 		*/
 		cout << e.what() << endl;
-		system("pause");
 		return EXIT_FAILURE;
 	}
 
-	system("pause");
+	
 	return 0;
 }
 

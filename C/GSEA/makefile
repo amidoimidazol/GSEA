@@ -14,12 +14,12 @@ CFLAGS = -std=c++11 -pthread -lm -Wl,--no-as-needed -g
 
 # define any directories containing header files other than /usr/include
 #
-INCLUDES = -I/home/dell/gsl/include 
+INCLUDES = -I/home/peter/gsl/include
 
 # define library paths in addition to /usr/lib
 #   if I wanted to include libraries not in /usr/lib I'd specify
 #   their path using -Lpath, something like:
-LFLAGS = -L/home/dell/gsl/lib
+LFLAGS = -L/home/peter/gsl/lib
 
 # define any libraries to link into executable:
 #   if I want to link in libraries (libx.so or libx.a) I use the -llibname 

@@ -54,7 +54,7 @@ bool FDR::make_r_sample_result() {
 	/*
 	Inserts the p value of a random sample into the result global variable. 
 	Calculates the random sample intersect population success value.
-	Generates a p value which get inserte
+	Generates a p value which get inserted
 
 	sample_success			|	std::map<std::string, int>
 	population_success		|	std::map<std::string, std::unordered_set<std::string>>

@@ -7,7 +7,7 @@ The results are stored in the result global.
 #include "GSEA.h"
 
 //----Constructors----//
-GSEA::GSEA(const char* database_file_, const char* population_file_, const char* sample_file_)
+GSEA::GSEA(char* database_file_, char* population_file_, char* sample_file_)
 	: database_file(database_file_), population_file(population_file_), sample_file(sample_file_)
 {	
 	/*
@@ -62,8 +62,8 @@ void GSEA::make_db_pop() {
 				// Produce a database_entries object from the line
 				std::string gene;
 				std::unordered_set<std::string> genes_in_category;
+                                
 				std::stringstream ss(line);
-
 				// Getting the category name ( first word on any line ) 
 				std::string category_name;
 				ss >> category_name;
@@ -72,8 +72,16 @@ void GSEA::make_db_pop() {
 
 				// Pushing the genes into a set
 				while (ss >> gene)
+                                        
+                                    /*This could potentially fix the line ending bug but probably gets handled somewhere else
+                                         while ( gene.find ("\r\n") != string::npos )
+                                            {
+                                                gene.erase ( gene.find ("\r\n"), 2 );
+                                            }
+                                    */
+                                    
 					genes_in_category.insert(gene);
-
+                                
 				// Remove category name from the set
 				genes_in_category.erase(category_name);
 
@@ -83,14 +91,14 @@ void GSEA::make_db_pop() {
 		}
 		myfile.close();
 	}
-	else throw GSEA_EXCEPTION("The file cant be opened: ", __FILE__, __LINE__, __FUNCTION__, database_file);
+	//else throw GSEA_EXCEPTION("The file cant be opened: ", __FILE__, __LINE__, __FUNCTION__, database_file);
 }
 void GSEA::find_common_genes(const std::string& category_name, const std::unordered_set<std::string>& genes_in_category) {
 	/*
 		Called by make_db_pop
 		Fills in the population_success global variable.
 		Finds the common elements between the database category and the population.
-		Stores the category name and the common genes the population_success global variable.
+		Stores the category name and the common genes in the population_success global variable.
 	*/
 	std::unordered_set<std::string> common_genes_in_category;
 
@@ -171,7 +179,7 @@ double GSEA::p_hyper(unsigned int k, unsigned int n1, unsigned int n2, unsigned 
 	
 	// Calculating p value
 	double p_value = 1 - i;
-	return p_value;
+	return p_value;			
 }
 
 //----Error checking methods----//
@@ -179,8 +187,8 @@ void GSEA::check_population() {
 	/*
 	Checking the given population file for problems.
 	*/
-	if (population.size() <= 0)
-		throw GSEA_EXCEPTION("The population file contains no genes.", __FILE__, __LINE__, __FUNCTION__);
+	//if (population.size() <= 0)
+		//throw GSEA_EXCEPTION("The population file contains no genes.", __FILE__, __LINE__, __FUNCTION__);
 }
 void GSEA::check_sample() {
 	/*
@@ -194,7 +202,7 @@ void GSEA::check_sample() {
 	// Check if the sample is a subset of the population 
 	for (std::unordered_set<std::string>::const_iterator it = sample.begin(); it != sample.end(); it++) {
 		if (population.find(*it) == population.end()) {
-			throw GSEA_EXCEPTION("The sample is not a subset of the population.", __FILE__, __LINE__, __FUNCTION__);
+			//throw GSEA_EXCEPTION("The sample is not a subset of the population.", __FILE__, __LINE__, __FUNCTION__);
 		}
 	}
 }
@@ -220,7 +228,7 @@ std::unordered_set<std::string> GSEA::read_file(const char* file_path) {
 		file.close();
 		return container;
 	}
-	else throw GSEA_EXCEPTION("The file cannot be opened: ", __FILE__, __LINE__, __FUNCTION__, file_path);
+	//else throw GSEA_EXCEPTION("The file cannot be opened: ", __FILE__, __LINE__, __FUNCTION__, file_path);
 
 }
 

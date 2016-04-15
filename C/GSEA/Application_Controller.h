@@ -34,21 +34,20 @@ Description:	The Application_Controller class controls the main workflow of the 
 class Application_Controller
 {
 public:
-	//----Methods----//
+        //----Data Members----//
+        //----Methods----//
 	//----Constructor: Default constructor----//
-	Application_Controller(){};
-	// Controls the workflow
-	void new_test();
-		// Launches GSEA test
-		GSEA run_gsea();
-		// Launches FDR test trough Thread_Controller
-		void run_fdr(GSEA test_);
+	Application_Controller(char** argv, int argc);
+        // Launches GSEA test
+        GSEA run_gsea(char** argv);
+        // Launches FDR test trough Thread_Controller
+        void run_fdr(GSEA test_);
 };
 
 inline void display_result() {
 	/*
 	Displays the results from the result container.
-	Writes them to a file
+	Writes them to a file in the ./Log/result.txt file
 	*/
 
 	ofstream myfile("./Log/result.txt");
