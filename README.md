@@ -35,7 +35,7 @@ The install can fail if the install directory contains spaces in their path!
 ##Installing GSEA:
 ###Linux:
 You need to compile and build in order to run. I have tested it with g++.
-You have to options to compile the program.
+You have two options to compile the program.
 
 ####Makefile
 Create object file and runnable binary
