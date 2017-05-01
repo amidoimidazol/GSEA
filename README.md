@@ -37,7 +37,7 @@ The install can fail if the install directory contains spaces in their path!
 You need to compile and build in order to run. I have tested it with g++.
 You have two options to compile the program.
 
-####Makefile
+#### Makefile
 Create object file and runnable binary
 ```sh
 	make
