@@ -20,13 +20,13 @@ Unpack the file into a different directory.
 Navigate to the folder you unpacked to, the prefix must be the path to the final installation directory.
 ```sh
     ./configure --prefix=/home/dell/gsl
-````
+```
 Run make
-````sh
+```sh
     make
-````
+```
 Install
-````sh
+```sh
     make install
 ```
 The include files will be in the directory set in the prefix.
@@ -42,7 +42,8 @@ Create object file and runnable binary
 ```sh
 	make
 ```
-* You might have to open up the makefile with a text editor and change the line 17 and 22 to reflect the path of your GSL installation.
+
+You might have to open up the makefile with a text editor and change the line 17 and 22 to reflect the path of your GSL installation.
 
 To clear the folder and remove object files you can use:
 ```sh
